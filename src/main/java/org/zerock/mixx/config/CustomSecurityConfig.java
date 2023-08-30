@@ -32,7 +32,8 @@ public class CustomSecurityConfig {
 
         log.info("------------configure-------------------");
         http.formLogin().loginPage("/member/login"); // board의register 가면 /member/login 이동 -> post 방식으로 처리p699
-        http.formLogin().failureUrl("/member/login?error");
+        http.formLogin().defaultSuccessUrl("/index.html"); // 로그인 성공 시 이동할 URL
+        http.formLogin().failureUrl("/member/login?error"); // 페이지 만들어야 함
         http.csrf().disable(); //csrf 비활성화 -> username,password만으로 로그인가능
 
         http.exceptionHandling().accessDeniedHandler(accessDeniedHandler()); //403
