@@ -24,7 +24,11 @@
         <div id="loginBoxTitle" style="font-size: 24px; font-weight: bold;">LOGIN</div>
         <div class="card-body">
             <th:block th:if="${param.logout != null}">
-                <h1>Logout........1</h1>
+                <h1>로그아웃</h1>
+            </th:block>
+<!--             오류 메시지를 표시할 자리 -->
+            <th:block th:if="${param.error != null}">
+                <div class="alert alert-danger">로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요.</div>
             </th:block>
 
             <section>

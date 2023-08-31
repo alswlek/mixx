@@ -6,7 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.oauth2.core.user.OAuth2User;
+
 
 import java.util.Collection;
 import java.util.Map;
@@ -37,7 +37,7 @@ public class MemberSecurityDTO extends User {
         this.social = social;
 
     }
-//
+
 //    public Map<String, Object> getAttributes() {
 //        return this.getProps();
 //    }
