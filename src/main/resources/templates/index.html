@@ -18,6 +18,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .fixed-bg {
+            width: 130%;
+            vertical-align: top;
+        }
+    </style>
+
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
@@ -46,27 +54,34 @@
                 <div class="col-lg-8 col-xl-7 col-xxl-6">
                     <div class="my-5 text-center text-xl-start">
 <!--                        <div class="display-5 fw-bolder text-white mb-2">Cromixi</div>-->
-                        <p class="lead fw-normal text-center text-white-50 mb-4">cromixi는 SaltluxInnovation이 제공하는
+                        <p class="lead fw-normal text-center text-white mb-4">
+                            cromixi는 <span style="color: #0ed058 !important;">Saltlux</span>
+                            <span style="color:#0097f6 !important;">Innovation</span>이 제공하는
+                            <br>
                             인공지능 학습데이터 구축을 위한 크라우드소싱 플랫폼입니다.</p>
                         <hr/>
-                        <p class="lead fw-normal text-center text-white-50 mb-4">간단한 수집부터 전문적인 데이터가공까지
-                            다양한 프로젝트에 참여해보세요!</p>
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="#features2">Learn More</a>
+                        <p class="lead fw-normal text-center text-white mb-4">
+                            간단한 수집부터<br>전문적인 데이터가공까지<br>
+                            다양한 프로젝트에 참여해보세요!
+                        </p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center ">
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3 text-center" href="#features" >작업 시작하기</a>
+<!--                            <a class="btn btn-outline-light btn-lg px-4" href="#features2">START</a>-->
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="http://cromixi.com/images/croworkscontents/img_info2.png" alt="..." /></div>
             </div>
         </div>
     </header>
     <!-- Features section-->
     <section class="py-5" id="features">
         <div class="container px-5 my-5">
-            <div class="row gx-5">
-                <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">PROJECT</h2>
-                <h4>작업자는 cromixi에서 제공하는 다음과 같은 형태의 데이터 수집 · 가공 작업을 진행합니다.</h4>
+            <div class="row gx-5 ">
+                <div class="col-lg-4 mb-5 mb-lg-0" >
+                    <h2 class="fw-bolder mb-0 text-center mt-5">PROJECT</h2>
+                    <h4 class="text-center mt-5">작업자는 cromixi에서 제공하는
+                    <br> 다음과 같은 형태의 데이터<br>수집 · 가공 작업을 진행합니다.</h4>
                 </div>
                 <div class="col-lg-8">
                     <div class="row gx-5 row-cols-1 row-cols-md-2">
@@ -98,19 +113,26 @@
             </div>
         </div>
     </section>
-    <!-- Testimonial section-->
+    <!-- 데이터 라벨링이란-->
     <div class="py-5 bg-light">
         <div class="container px-5 my-5">
             <div class="row gx-5 justify-content-center">
-                <div class="col-lg-10 col-xl-7">
+                <div class="col-lg-4 order-lg-1"> <!-- 왼쪽 컬럼 -->
+                    <div class="text">
+                        <img class="fixed-bg" src="https://academy.crowdworks.kr/static/media/labeling-588x400.d3f5ad2d2ebe62e340ac.jpg" alt="..." style="max-width: 130%;" />
+                    </div>
+                </div>
+                <div class="col-lg-8 order-lg-2"> <!-- 가운데와 오른쪽 컬럼 합치기 -->
                     <div class="text-center">
-                        <div class="fs-4 mb-4 fst-italic">"Working with Start Bootstrap templates has saved me tons of development time when building new projects! Starting with a Bootstrap template just makes things easier!"</div>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                            <div class="fw-bold">
-                                Tom Ato
-                                <span class="fw-bold text-primary mx-1">/</span>
-                                CEO, Pomodoro
+                        <div class="fs-1 mb-4 fw-bolder">"데이터 라벨링이란?"</div>
+                        <div class="text-center fs-4">
+                            <p>데이터 라벨링이란, 인공지능이 특정 데이터를
+                                <br>스스로 학습할 수 있도록 데이터를 알맞게
+                                <br> 수집 및 가공하는 작업을 말합니다.</p>
+                            <br>
+                            <div class="fs-5">
+                                <p>작업자 : 데이터를 수집 및 가공합니다.</p>
+                                <p>검수자 : 데이터가 올바르게 수집 및 가공되었는지 확인합니다.</p>
                             </div>
                         </div>
                     </div>
@@ -118,6 +140,29 @@
             </div>
         </div>
     </div>
+
+
+
+
+    <!--    <div class="py-5 bg-light">-->
+<!--        <div class="container px-5 my-5">-->
+<!--            <div class="row gx-5 justify-content-center">-->
+<!--                <div class="col-lg-10 col-xl-7">-->
+<!--                    <div class="text-center">-->
+<!--                        <div class="fs-4 mb-4">"Working with Start Bootstrap templates has saved me tons of development time when building new projects! Starting with a Bootstrap template just makes things easier!"</div>-->
+<!--                        <div class="d-flex align-items-center justify-content-center">-->
+<!--                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />-->
+<!--                            <div class="fw-bold">-->
+<!--                                Tom Ato-->
+<!--                                <span class="fw-bold text-primary mx-1">/</span>-->
+<!--                                CEO, Pomodoro-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
     <!-- Blog preview section-->
     <section class="py-5"  id="features2">
         <div class="container px-5 my-5">
