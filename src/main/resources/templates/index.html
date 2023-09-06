@@ -14,6 +14,12 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 
+<!--    슬릭슬라이드-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 <!--&lt;!&ndash;그냥 구글 폰트&ndash;&gt;-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +32,19 @@
         }
     </style>
 
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                dots: true, // 점 네비게이션 표시 여부
+                autoplay: true, // 자동 슬라이드 여부
+                autoplaySpeed: 3000, // 자동 슬라이드 속도 (3초마다)
+            });
+        });
+    </script>
+
+
 </head>
+
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
     <!-- Navigation-->
@@ -53,24 +71,29 @@
             <div class="row gx-5 align-items-center justify-content-center">
                 <div class="col-lg-8 col-xl-7 col-xxl-6">
                     <div class="my-5 text-center text-xl-start">
-<!--                        <div class="display-5 fw-bolder text-white mb-2">Cromixi</div>-->
-                        <p class="lead fw-normal text-center text-white mb-4">
-                            cromixi는 <span style="color: #0ed058 !important;">Saltlux</span>
-                            <span style="color:#0097f6 !important;">Innovation</span>이 제공하는
-                            <br>
-                            인공지능 학습데이터 구축을 위한 크라우드소싱 플랫폼입니다.</p>
-                        <hr/>
-                        <p class="lead fw-normal text-center text-white mb-4">
-                            간단한 수집부터<br>전문적인 데이터가공까지<br>
-                            다양한 프로젝트에 참여해보세요!
-                        </p>
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center ">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3 text-center" href="#features" >작업 시작하기</a>
-<!--                            <a class="btn btn-outline-light btn-lg px-4" href="#features2">START</a>-->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="http://cromixi.com/images/croworkscontents/img_info2.png" alt="..." /></div>
+                        <!-- 슬릭 슬라이더 추가 -->
+                        <div class="slider">
+                            <div>
+                                <div class="text-center"> <!-- 텍스트 가운데 정렬 -->
+                                    <p class="lead fw-normal text-center text-white mb-4">
+                                        cromixi는 <span style="color: #0ed058 !important;">Saltlux</span>
+                                        <span style="color:#0097f6 !important;">Innovation</span>이 제공하는
+                                        <br>
+                                        인공지능 학습데이터 구축을 위한 크라우드소싱 플랫폼입니다.
+                                    </p>
+                                    <hr/>
+                                    <p class="lead fw-normal text-center text-white mb-4">
+                                        간단한 수집부터<br>전문적인 데이터가공까지<br>
+                                        다양한 프로젝트에 참여해보세요!
+                                    </p>
+                                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-center ">
+                                        <a class="btn btn-primary btn-lg px-4 me-sm-3 text-center" href="#features">작업 시작하기</a>
+                                    </div>
+                                </div>
+                            </div>
+                                <div><img src="http://cromixi.com/images/croworkscontents/img_info2.png" alt="Image 1" style="max-width: 100%; height: auto;"></div>
+                                <div><img src="http://www.saltluxinno.com/sli/images/main/main-theme-img01.jpg" alt="Image 2" style="max-width: 80%; height: auto;"></div>
+                        <!-- 슬릭 슬라이더 끝 -->
             </div>
         </div>
     </header>
