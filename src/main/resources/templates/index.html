@@ -60,8 +60,19 @@
                     <li class="nav-item"><a class="nav-link text-dark" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link text-dark" href="/board/list">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link text-dark" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="/member/login">login</a></li>
                 </ul>
+                <section>
+                    <div id="nav-buttons">
+                        <div th:if="${#authorization.expression('isAuthenticated()')}">
+                            <form action="/member/login?logout" method="post">
+                                <a id="signout" type="submit">로그아웃</a>
+                            </form>
+                        </div>
+                        <div th:unless="${#authorization.expression('isAuthenticated()')}">
+                            <a class="nav-link text-dark" href="/member/login">로그인</a>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </nav>
@@ -92,7 +103,7 @@
                                 </div>
                             </div>
                                 <div><img src="http://cromixi.com/images/croworkscontents/img_info2.png" alt="Image 1" style="max-width: 100%; height: auto;"></div>
-                                <div><img src="http://www.saltluxinno.com/sli/images/main/main-theme-img01.jpg" alt="Image 2" style="max-width: 80%; height: auto;"></div>
+
                         <!-- 슬릭 슬라이더 끝 -->
             </div>
         </div>
