@@ -16,6 +16,7 @@ import org.zerock.mixx.security.dto.MemberSecurityDTO;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+//실제 인증처리할때 userdetailsservice 사용
 @Log4j2
 @Service
 @RequiredArgsConstructor
