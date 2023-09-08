@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko"
-        xmlns:th="http://www.thymeleaf.org"
+      xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
@@ -17,46 +17,52 @@
     <link href="../css/login.css" rel="stylesheet">
     <script src="../js/login.js"></script>
 </head>
+
 <body>
-    <!--  html 전체 영역을 지정하는 container -->
+<!-- html 전체 영역을 지정하는 container -->
 <div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
     <div style="width: 95%; max-width: 500px; border: 1px solid #ccc; padding: 20px;">
-    <!--  login 폼 영역을 : loginBox -->
-    <div id="loginBox">
-        <!-- 로그인 페이지 타이틀 -->
-        <div id="loginBoxTitle" style="font-size: 24px; font-weight: bold;">LOGIN</div>
-        <div class="card-body">
-<!--            <th:block th:if="${param.logout != null}">-->
-<!--                <h1>로그아웃 되셨습니다.</h1>-->
-<!--            </th:block>-->
-<!--             오류 메시지를 표시할 자리 -->
-            <th:block th:if="${param.error != null}">
-                <div class="alert alert-danger">로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요.</div>
-            </th:block>
-            <section>
-                <th:block sec:authorize="!isAuthenticated()">
-                    <form action="/member/login" method="post" th:if="${param.logout == null }">
-                        <input class="box" id="signin-id" type="text" name="username" placeholder="아이디 입력 (6~20자)"/>
-                        <input class="box" id="signin-pw" type="password" name="password" placeholder="비밀번호 입력 (문자, 숫자, 특수문자 포함 8~20자)"/>
-                        <button id="signin" type="submit">로그인</button>
-                    </form>
-                </th:block>
-                <th:block sec:authorize="isAuthenticated()" >
-                    <form action="/member/login?logout" method="post">
-                        <button id="signout" type="submit">로그아웃</button>
-                    </form>
-                </th:block>
-            </section>
+        <!-- login 폼 영역을 : loginBox -->
+        <div id="loginBox">
 
-            <div id="link-menu">
-<!--                <a href="javascript:void(0)">아이디 찾기 </a>-->
-<!--                <a href="javascript:void(0)">비밀번호 찾기 </a>-->
-                <a href="/index.html">홈</a>
-                <a href="/member/join">회원가입 </a>
+            <!-- 로그인 페이지 타이틀 -->
+            <div id="loginBoxTitle" style="font-size: 24px; font-weight: bold;">LOGIN</div>
+            <div class="card-body">
+                <th:block th:if="${param.logout != null}">
+                    <h1>로그아웃 되셨습니다.</h1>
+                </th:block>
 
+                <!-- 오류 메시지를 표시할 자리 -->
+                <th:block th:if="${param.error != null}">
+                    <div class="alert alert-danger">로그인에 실패했습니다. 아이디와 비밀번호를 확인해주세요.</div>
+                </th:block>
+
+                <section>
+                    <th:block sec:authorize="!isAuthenticated()" th:if="${param.logout == null }">
+                        <form action="/member/login" method="post" >
+                            <input class="box" id="signin-id" type="text" name="username" placeholder="아이디 입력 (6~20자)"/>
+                            <input class="box" id="signin-pw" type="password" name="password" placeholder="비밀번호 입력 (문자, 숫자, 특수문자 포함 8~20자)"/>
+                            <button id="signin" type="submit">로그인</button>
+                        </form>
+                    </th:block>
+
+                    <th:block sec:authorize="isAuthenticated()" >
+                        <form action="/member/logout" method="post">
+                            <button id="signout" type="submit">로그아웃</button>
+                        </form>
+                    </th:block>
+                </section>
+
+
+                <div id="link-menu">
+                    <!-- <a href="javascript:void(0)">아이디 찾기 </a>-->
+                    <!-- <a href="javascript:void(0)">비밀번호 찾기 </a>-->
+                    <a href="/index.html">홈</a>
+                    <a href="/member/join">회원가입 </a>
+
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </div>
 </body>

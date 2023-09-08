@@ -49,23 +49,16 @@ public class MemberController {
     @GetMapping("/login") //post 방식은 시큐리티가 자동적으로 처리함
     public void loginGET(String errorCode, String logout) {
         log.info("login get..............");
-        log.info("logout: " + logout); //로그인요청중 로그아웃요청이 없으므로 logout ==null
+        log.info("logout: " + logout);
 
         if (logout != null) {
             log.info("user logout!!!!!!!!!!!!!!!");
         }
+
     }
-//    @GetMapping("/member/login?logout") // 로그아웃을 위한 컨트롤러
-//    public String logoutGET(HttpServletRequest request, HttpServletResponse response) {
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        if (auth != null) {
-//            new SecurityContextLogoutHandler().logout(request, response, auth);
-//        }
-//        return "redirect:/index"; // 로그아웃 후 로그인 페이지로 리다이렉트
-////        return "redirect:/member/login";
-//    }
-    @PostMapping("/logout") // POST 요청으로 로그아웃을 처리하는 컨트롤러
-    public String logoutPOST(HttpServletRequest request, HttpServletResponse response) {
+
+    @GetMapping("/logout") // 로그아웃을 위한 컨트롤러
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
@@ -73,5 +66,4 @@ public class MemberController {
         return "redirect:/member/login?logout"; // 로그아웃 후 로그인 페이지로 리다이렉트
     }
 
-    }
-
+}

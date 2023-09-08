@@ -30,6 +30,7 @@ public class MemberRepositoryTests {
             Member member = Member.builder()
                     .mid("member" + i)
                     .mpw(passwordEncoder.encode("abc123456!"))
+                    .name("member" + i)
                     .email("email" + i + "@aaa.bbb")
                     .name("member" + i)
                     .build();
@@ -41,7 +42,7 @@ public class MemberRepositoryTests {
             memberRepository.save(member);
         });
     }
-//    회원조회 테스트 멤버10이 유저 권한, 어디민 권한 을 다가지고 잇음
+//    회원조회 테스트 멤버10이 유저 권한, 어드민 권한 을 다가지고 잇음
     @Test
     public void testRead(){
 
